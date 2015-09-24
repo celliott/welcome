@@ -8,14 +8,14 @@ set -e
 RUBY_VERSION=2.2.2
 SUBLIME_CONTENT_TYPES=("public.ruby-script" "public.php-script" "org.yaml.yaml" "public.xml" "public.plain-text" "public.shell-script" "public.json")
 
-echo [info] welcome...
+echo "[info] welcome..."
 
 if xcode-select -p > /dev/null;
 then
-	echo [info] xcode installed
+	echo "[info] xcode installed"
 else
-	echo [error] you must install xcode before running!
-	echo [info] run $ xcode-select --install
+	echo "[error] you must install xcode before running!"
+	echo "[info] run $ xcode-select --install"
 	exit
 fi
 
@@ -23,14 +23,14 @@ fi
 # installing homebrew...
 if which brew > /dev/null;
 then
-	echo [info] homebrew installed
+	echo "[info] homebrew installed"
 else
-	echo [info] installing homebrew
+	echo "[info] installing homebrew"
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 
-echo [info] installing applications...
+echo "[info] installing dev dependencies..."
 brew install git
 brew update
 brew install caskroom/cask/brew-cask rbenv pyenv
@@ -63,25 +63,21 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 
 # install ruby
-echo [warning] installing ruby. we all know this takes too long
+echo "[warning] installing ruby. we all know this takes too long"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
-
-# to think about
-# rm -rf /Users/admin/.rbenv/versions/2.2.2
-
 echo $(rbenv install $RUBY_VERSION)
 rbenv rehash
 rbenv global $RUBY_VERSION
 
 
 # results
-echo [info] ---	\#results
-echo [notice] restart to remove the f\'ing smart quotes and for sublime cli
-echo [info] $(ruby -v)
-echo [info] $(git --version)
-echo [info] $(boot2docker version)
-echo [info] $(subl -v)
-echo [info] $(vagrant -v)
-echo [info] command to open files in sublime: $ open ruby.rb
-echo [info] done
+echo "[info] ---	#results"
+echo "[notice] restart/logout to remove smart quotes and setup sublime cli"
+echo "[info] $(ruby -v)"
+echo "[info] $(git --version)"
+echo "[info] $(boot2docker version)"
+echo "[info] $(subl -v)"
+echo "[info] $(vagrant -v)"
+echo "[info] command to open files in sublime: $ open ruby.rb"
+echo "[info] done"
