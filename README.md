@@ -1,6 +1,6 @@
 # welcome
 
-Simple dev workstation setup script. this script is designed to be run on a fresh Yosemite Install.
+Simple dev workstation setup script. This script is designed to be run on a fresh Install of Yosemite.
 
 
 ###What it does:
