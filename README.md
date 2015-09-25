@@ -1,6 +1,6 @@
 # welcome
 
-Simple dev workstation setup script. This script is designed to be run on a fresh Install of Yosemite.
+Simple dev workstation setup script. This script is designed to be run on a fresh install of Mavericks.
 
 
 ###What it does:
