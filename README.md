@@ -84,7 +84,7 @@ Password:
 Running again after a successful install will ask if you want to reinstall ruby
 
 ```
-rbenv: /Users/admin/.rbenv/versions/2.2.2 already exists
+rbenv: /Users/<username>/.rbenv/versions/2.2.2 already exists
 continue with installation? (y/N)
 ```
 
