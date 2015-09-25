@@ -30,17 +30,19 @@ $ xcode-select --install
 ```  
   
 ### Run script:
-NOTE you can specify ruby version by running `$ export RUBY_VERSION=<x.x.x>` before running setup.sh. Default is 2.2.2
   
 ```
 # download setup.sh
 $ curl https://raw.githubusercontent.com/celliott/welcome/master/setup.sh >> setup.sh
 	
-# set setup.sh as executable	
+# set setup.sh as executable
 $ chmod +x setup.sh
 	
 # run setup.sh
 $ ./setup.sh
+
+# specify ruby version. default is 2.2.2
+$ RUBY_VERSION=<x.x.x> ./setup.sh
 ```	
 
 ### Manual steps:
