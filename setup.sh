@@ -5,7 +5,7 @@
 
 set -e
 
-RUBY_VERSION=2.2.2
+RUBY_VERSION=${RUBY_VERSION:-'2.2.2'}
 SUBLIME_CONTENT_TYPES=("public.ruby-script" "public.php-script" "org.yaml.yaml" "public.xml" "public.plain-text" "public.shell-script" "public.json")
 
 echo "[info] welcome..."
