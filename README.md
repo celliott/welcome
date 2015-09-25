@@ -81,7 +81,7 @@ caskroom install
 Password:
 ```
 
-Running after a successful install will ask if you want to reinstall ruby
+Running again after a successful install will ask if you want to reinstall ruby
 
 ```
 rbenv: /Users/admin/.rbenv/versions/2.2.2 already exists
