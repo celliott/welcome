@@ -10,6 +10,7 @@ SUBLIME_CONTENT_TYPES=("public.ruby-script" "public.php-script" "org.yaml.yaml" 
 
 echo "[info] welcome..."
 
+# checks for xcode cli
 if xcode-select -p > /dev/null;
 then
 	echo "[info] xcode installed"
@@ -19,8 +20,7 @@ else
 	exit
 fi
 
-
-# installing homebrew...
+# install homebrew...
 if which brew > /dev/null;
 then
 	echo "[info] homebrew installed"
@@ -29,7 +29,7 @@ else
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-
+# install dev dependencies
 echo "[info] installing dev dependencies..."
 brew install git
 brew update
@@ -39,7 +39,6 @@ brew cask install virtualbox vagrant boot2docker iterm2
 brew tap caskroom/versions
 brew cask install sublime-text3
 
-
 # update .bash_profile
 echo 'export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$HOME/.rbenv/bin:$PATH
 export EDITOR="subl -w"
@@ -48,19 +47,15 @@ eval "$(rbenv init -)"
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv init -)"' >> ~/.bash_profile
 
-
 # set sublime the default text editor
-# NOTE need to test
 for CONTENT_TYPE in "${SUBLIME_CONTENT_TYPES[@]}"
 do
 	defaults write com.apple.LaunchServices LSHandlers -array-add "{ LSHandlerContentType = $CONTENT_TYPE; LSHandlerRoleAll = 'com.sublimetext.3'; }"
 done
 
-
 # disable smart quotes and dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
 
 # install ruby
 echo "[warning] installing ruby. we all know this takes too long"
@@ -69,7 +64,6 @@ eval "$(rbenv init -)"
 echo $(rbenv install $RUBY_VERSION)
 rbenv rehash
 rbenv global $RUBY_VERSION
-
 
 # results
 echo "[info] ---	#results"
